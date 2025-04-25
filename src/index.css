@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-neutral-800 bg-neutral-50;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-primary-800 font-bold;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl leading-snug;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block px-5 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:translate-y-[-2px];
+  }
+  
+  .btn-primary {
+    @apply bg-primary-800 text-white hover:bg-primary-700 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-400 text-primary-900 hover:bg-secondary-500 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-800 text-primary-800 hover:bg-primary-50;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .section {
+    @apply py-12 md:py-20;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .nav-link {
+    @apply text-neutral-800 hover:text-primary-800 transition-colors duration-300 font-medium;
+  }
+  
+  .nav-link-active {
+    @apply text-primary-800 font-semibold;
+  }
+
+  .page-transition {
+    @apply animate-fadeIn;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+}
